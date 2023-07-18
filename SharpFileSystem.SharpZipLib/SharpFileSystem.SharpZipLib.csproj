@@ -11,7 +11,13 @@ Support .NET Core 2.0, 2.1, 2.2, 3.0, 3.1, 5.0, 6.0, 7.0
 Support .NET Framework 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8, 4.8.1</Description>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <RepositoryUrl>https://github.com/maurosoft1973/sharpfilesystem</RepositoryUrl>
-    <PackageTags>https://github.com/maurosoft1973/sharpfilesystem</PackageTags>
+    <PackageProjectUrl>https://github.com/maurosoft1973/sharpfilesystem</PackageProjectUrl>
+    <PackageTags>vfs sharpfilesystem</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>SharpFileSystemV2.SharpZipLib</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,10 +29,18 @@ Support .NET Framework 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8, 4.8.1</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
+    <None Include="..\icon.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
+    <None Include="..\LICENSE.txt">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+    </None>
+    <None Include="..\README.md">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+    </None>
+    </ItemGroup>
 
 </Project>

@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 // NuGet automatically substitutes this as $description$ in the .nuspec
-[assembly: AssemblyDescription("Access an assembly’s resources as a virtual file system")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
