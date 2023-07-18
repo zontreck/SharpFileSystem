@@ -19,6 +19,7 @@
     <Description>Access an assembly’s resources as a virtual file system
 Support .NET Core 2.0, 2.1, 2.2, 3.0, 3.1, 5.0, 6.0, 7.0
 Support .NET Framework 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8, 4.8.1</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
