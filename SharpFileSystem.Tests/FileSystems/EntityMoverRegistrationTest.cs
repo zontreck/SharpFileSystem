@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpFileSystem.Collections;
 using SharpFileSystem.FileSystems;
 
 namespace SharpFileSystem.Tests.FileSystems
 {
-    [TestFixture]
+    [TestClass]
     public class EntityMoverRegistrationTest
     {
         private TypeCombinationDictionary<IEntityMover> Registration;
-        private IEntityMover physicalEntityMover = new PhysicalEntityMover();
-        private IEntityMover standardEntityMover = new StandardEntityMover();
+        private readonly IEntityMover physicalEntityMover = new PhysicalEntityMover();
+        private readonly IEntityMover standardEntityMover = new StandardEntityMover();
 
-        [SetUp]
+        [TestInitialize]
         public void Initialize()
         {
             Registration = new TypeCombinationDictionary<IEntityMover>();
@@ -24,7 +24,7 @@ namespace SharpFileSystem.Tests.FileSystems
             Registration.AddLast(typeof(IFileSystem), typeof(IFileSystem), standardEntityMover);
         }
 
-        [Test]
+        [TestMethod]
         public void When_MovingFromPhysicalToGenericFileSystem_Expect_StandardEntityMover()
         {
             Assert.AreEqual(
@@ -33,7 +33,7 @@ namespace SharpFileSystem.Tests.FileSystems
                 );
         }
 
-        [Test]
+        [TestMethod]
         public void When_MovingFromOtherToPhysicalFileSystem_Expect_StandardEntityMover()
         {
             Assert.AreEqual(
@@ -42,7 +42,7 @@ namespace SharpFileSystem.Tests.FileSystems
                 );
         }
 
-        [Test]
+        [TestMethod]
         public void When_MovingFromGenericToGenericFileSystem_Expect_StandardEntityMover()
         {
             Assert.AreEqual(
@@ -51,7 +51,7 @@ namespace SharpFileSystem.Tests.FileSystems
                 );
         }
 
-        [Test]
+        [TestMethod]
         public void When_MovingFromPhysicalToPhysicalFileSystem_Expect_PhysicalEntityMover()
         {
             Assert.AreEqual(

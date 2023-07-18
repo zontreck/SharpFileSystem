@@ -1,6 +1,6 @@
 # SharpFileSystem
 
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/github/bobvanderlinden/sharpfilesystem?svg=true)](https://ci.appveyor.com/project/bobvanderlinden/sharpfilesystem) [![Travis](https://img.shields.io/travis/bobvanderlinden/sharpfilesystem.svg?maxAge=2592000&label=travis)](https://travis-ci.org/bobvanderlinden/sharpfilesystem) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](LICENSE.txt)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](LICENSE.txt)
 
 SharpFileSystem is a [Virtual File System (VFS)](http://en.wikipedia.org/wiki/Virtual_file_system) implementation for .NET to allow access to different filesystems in the same way for normal files and directories.
 
@@ -35,15 +35,15 @@ There are also filesystems that alter the exposed structure of existing filesyst
 
 At the heart of the system there is the `IFileSystem` interface. This describes the operations that should be provided by every filesystem:
 
-	public interface IFileSystem : IDisposable
-	{
-		ICollection<FileSystemPath> GetEntities(FileSystemPath path);
-		bool Exists(FileSystemPath path);
-		Stream CreateFile(FileSystemPath path);
-		Stream OpenFile(FileSystemPath path, FileAccess access);
-		void CreateDirectory(FileSystemPath path);
-		void Delete(FileSystemPath path);
-	}
+    public interface IFileSystem : IDisposable
+    {
+        ICollection<FileSystemPath> GetEntities(FileSystemPath path);
+        bool Exists(FileSystemPath path);
+        Stream CreateFile(FileSystemPath path);
+        Stream OpenFile(FileSystemPath path, FileAccess access);
+        void CreateDirectory(FileSystemPath path);
+        void Delete(FileSystemPath path);
+    }
 
 Normally in .NET/Mono we refer to files by their path coded as a string. This sometimes leads to inconsistencies, which is why I've created the type FileSystemPath to encapsulate the path in SharpFileSystem. There are operations that help create and alter the path, but the rules of using them are more strict, which creates a much more robust environment for the programmer:
 

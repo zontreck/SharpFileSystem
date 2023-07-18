@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SharpFileSystem.Resources")]
 // NuGet automatically substitutes this as $description$ in the .nuspec
 [assembly: AssemblyDescription("Access an assembly’s resources as a virtual file system")]
 

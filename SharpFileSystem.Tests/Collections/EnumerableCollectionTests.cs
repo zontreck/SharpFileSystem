@@ -1,41 +1,42 @@
 using System;
-using NUnit.Framework;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpFileSystem.Collections;
 
 namespace SharpFileSystem.Tests.Collections
 {
-    [TestFixture]
+    [TestClass]
     public class EnumerableCollectionTests
     {
-        [Test]
+        [TestMethod]
         public void When_CopyToArray_Expect_OutputEqualToInput()
         {
             var input = new[] {"a", "b", "c"};
             var enumerableCollection = new EnumerableCollection<string>(input, input.Length);
             var output = new string[3];
             enumerableCollection.CopyTo(output, 0);
-            Assert.AreEqual(input, output);
+            output.Should().BeEquivalentTo(input);
         }
 
-        [Test]
+        [TestMethod]
         public void When_CopyToTooSmallArray_Expect_ArgumentOutOfRangeException()
         {
             var input = new[] {"a", "b", "c"};
             var enumerableCollection = new EnumerableCollection<string>(input, input.Length);
             var output = new string[2];
-            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
             {
                 enumerableCollection.CopyTo(output, 0);
             });
         }
 
-        [Test]
+        [TestMethod]
         public void When_CopyToInvalidIndex_Expect_ArgumentOutOfRangeException()
         {
             var input = new[] {"a", "b", "c"};
             var enumerableCollection = new EnumerableCollection<string>(input, input.Length);
             var output = new string[3];
-            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
             {
                 enumerableCollection.CopyTo(output, 1);
             });
