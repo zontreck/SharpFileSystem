@@ -1,8 +1,6 @@
-name: Release to NuGet
+name: Release to NuGet Manual
 
-on:
-  release:
-    types: [published]
+on: workflow_dispatch
     
 jobs:
   build:
@@ -22,4 +20,4 @@ jobs:
     - name: Pack nugets
       run: dotnet pack -c Release --no-build --output .
     - name: Push to NuGet
-      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
