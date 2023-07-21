@@ -1,5 +1,7 @@
 # SharpFileSystem
 
+[![NuGet](https://img.shields.io/nuget/v/SharpFileSystemV2.svg?style=flat-square)](https://www.nuget.org/packages/SharpFileSystemV2)
+[![Nuget](https://img.shields.io/nuget/dt/SharpFileSystemV2)](https://www.nuget.org/packages/SharpFileSystemV2)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](LICENSE.txt)
 
 SharpFileSystem is a [Virtual File System (VFS)](http://en.wikipedia.org/wiki/Virtual_file_system) implementation for .NET to allow access to different filesystems in the same way for normal files and directories.
