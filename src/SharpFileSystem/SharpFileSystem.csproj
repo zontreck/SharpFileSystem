@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net6.0;net7.0</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <DocumentationFile>SharpFileSystem.xml</DocumentationFile>
+        <!-- Project is not a test project -->
+        <SonarQubeTestProject>false</SonarQubeTestProject>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <Authors>Mauro Cardillo</Authors>
+        <Company>Mauro Cardillo</Company>
+        <Description>A virtual file system for .NET written in C#
+    Support .NET Core 2.0, 2.1, 2.2, 3.0, 3.1, 5.0, 6.0, 7.0
+    Support .NET Framework 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8, 4.8.1</Description>
+        <RepositoryUrl>https://github.com/maurosoft1973/sharpfilesystem</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/maurosoft1973/sharpfilesystem</PackageProjectUrl>
+        <PackageTags>vfs sharpfilesystem</PackageTags>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Maurosoft.SharpFileSystem</PackageId>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageIconUrl />
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="SharpFileSystem.xml" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.Text.Json" Version="7.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\icon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\LICENSE.txt">
+          <Pack>True</Pack>
+          <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+</Project>
+

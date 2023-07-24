@@ -1,47 +1,48 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0;net7.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <!-- Project is not a test project -->
     <SonarQubeTestProject>false</SonarQubeTestProject>
     <Authors>Mauro Cardillo</Authors>
-    <Description>Access a ZIP as a virtual file system
-Support .NET Core 2.0, 2.1, 2.2, 3.0, 3.1, 5.0, 6.0, 7.0
-Support .NET Framework 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8, 4.8.1</Description>
+    <Company>Mauro Cardillo</Company>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <RepositoryUrl>https://github.com/maurosoft1973/sharpfilesystem</RepositoryUrl>
     <PackageProjectUrl>https://github.com/maurosoft1973/sharpfilesystem</PackageProjectUrl>
     <PackageTags>vfs sharpfilesystem</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>SharpFileSystemV2.SharpZipLib</PackageId>
+    <PackageId>Maurosoft.SharpFileSystem.Resources</PackageId>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
-    <Version>1.0.1</Version>
+    <Description>Access an assembly’s resources as a virtual file system
+Support .NET Core 2.0, 2.1, 2.2, 3.0, 3.1, 5.0, 6.0, 7.0
+Support .NET Framework 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8, 4.8.1</Description>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="SharpZipLib" Version="1.4.2" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SharpFileSystem.Resources.xml</DocumentationFile>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SharpFileSystem\SharpFileSystem.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\icon.png">
+    <None Include="..\..\icon.png">
         <Pack>True</Pack>
         <PackagePath></PackagePath>
     </None>
-    <None Include="..\LICENSE.txt">
+    <None Include="..\..\LICENSE.txt">
         <Pack>True</Pack>
         <PackagePath></PackagePath>
     </None>
-    <None Include="..\README.md">
+    <None Include="..\..\README.md">
         <Pack>True</Pack>
         <PackagePath></PackagePath>
     </None>
-    </ItemGroup>
-
+  </ItemGroup>
 </Project>

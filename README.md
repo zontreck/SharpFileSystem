@@ -1,14 +1,22 @@
 # SharpFileSystem
 
-[![NuGet](https://img.shields.io/nuget/v/SharpFileSystemV2.svg?style=flat-square)](https://www.nuget.org/packages/SharpFileSystemV2)
-[![Nuget](https://img.shields.io/nuget/dt/SharpFileSystemV2)](https://www.nuget.org/packages/SharpFileSystemV2)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](LICENSE.txt)
+[![Lint Code Base](https://github.com/maurosoft1973/SharpFileSystem/actions/workflows/linter.yml/badge.svg)](https://github.com/maurosoft1973/SharpFileSystem/actions/workflows/linter.yml)
+[![CodeQL](https://github.com/maurosoft1973/SharpFileSystem/actions/workflows/codeql.yml/badge.svg)](https://github.com/maurosoft1973/SharpFileSystem/actions/workflows/codeql.yml)
+[![NuGet](https://img.shields.io/nuget/v/Maurosoft.SharpFileSystem.svg?style=flat-square)](https://www.nuget.org/packages/Maurosoft.SharpFileSystem)
+[![Nuget](https://img.shields.io/nuget/dt/Maurosoft.SharpFileSystem)](https://www.nuget.org/packages/Maurosoft.SharpFileSystem)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/maurosoft1973/SharpFileSystem/blob/master/LICENSE.txt)
 
 SharpFileSystem is a [Virtual File System (VFS)](http://en.wikipedia.org/wiki/Virtual_file_system) implementation for .NET to allow access to different filesystems in the same way for normal files and directories.
 
 ## Motivation
 
 After looking a long time for a VFS for .NET, so that I could read files and directories in archives (zip and rar) the same way as any ordinary files and directories. I couldn't find any complete solution for this problem, so I decided to implement a VFS myself. Also what I didn't like in the ordinary filesystems was the path-system. It allowed relative paths (like ..), which can often lead to security issues without explicit checking. It allows referring to directories the same way as referring to files. This often leads to strange behavior, like copying a directory (source) to another directory (destination), here it is often vague whether the destination directory should be overwritten or if it should copy the source-directory inside the destination-directory.
+
+## Installation
+
+The library is available on [NuGet](https://www.nuget.org/packages/Maurosoft.SharpFileSystem). Just search for *Maurosoft.SharpFileSystem* in the **Package Manager GUI** or run the following command in the **.NET CLI**:
+
+    dotnet add package Maurosoft.SharpFileSystem
 
 ## Goals
 
@@ -64,3 +72,4 @@ Operation | Result
 `var myfile = mydir.AppendFile("myfile")` | `/mydir/myfile`
 `myfile.AppendFile("myfile2")` | Error: The specified `FileSystemPath` is not a directory.
 `mydir.ParentPath` | `/`
+
