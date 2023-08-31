@@ -353,3 +353,5 @@ MigrationBackup/
 
 # Exclude the output files from a SnapWrap compile job.
 *.SnapWrap.cs
+
+*.csproj
