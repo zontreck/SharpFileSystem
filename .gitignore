@@ -350,3 +350,6 @@ MigrationBackup/
 .ionide/
 
 /src/TinyHelpers/TinyHelpers.xml
+
+# Exclude the output files from a SnapWrap compile job.
+*.SnapWrap.cs
